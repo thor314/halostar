@@ -1,5 +1,6 @@
 #![allow(clippy::many_single_char_names)]
 #![allow(clippy::op_ref)]
+#![allow(unknown_lints)]
 
 use assert_matches::assert_matches;
 use ff::{FromUniformBytes, WithSmallOrderMulGroup};

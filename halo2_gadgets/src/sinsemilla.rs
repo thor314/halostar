@@ -655,11 +655,7 @@ pub(crate) mod tests {
                         |(l, (left, right))| {
                             let merkle_crh = sinsemilla::HashDomain::from_Q((*Q).into());
                             let point = merkle_crh
-                                .hash_to_point(
-                                    l.into_iter()
-                                        .chain(left)
-                                        .chain(right),
-                                )
+                                .hash_to_point(l.into_iter().chain(left).chain(right))
                                 .unwrap();
                             point.to_affine()
                         },

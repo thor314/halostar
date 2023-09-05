@@ -514,7 +514,7 @@ fn plonk_api() {
         Scheme::Scalar: Ord + WithSmallOrderMulGroup<3> + FromUniformBytes<64>,
     {
         let (_, instance, _) = common!(Scheme);
-        let pubinputs = vec![instance];
+        let pubinputs = [instance];
 
         let mut transcript = T::init(proof);
 
@@ -589,6 +589,7 @@ fn plonk_api() {
         >(verifier_params, pk.get_vk(), &proof[..]);
     }
 
+    #[allow(clippy::needless_raw_string_hashes)]
     fn test_plonk_api_ipa() {
         use halo2_proofs::poly::ipa::commitment::{IPACommitmentScheme, ParamsIPA};
         use halo2_proofs::poly::ipa::multiopen::{ProverIPA, VerifierIPA};

@@ -99,7 +99,7 @@ impl<F: PrimeFieldBits> RangeConstrained<F, Value<F>> {
         Self {
             inner: value.map(|value| bitrange_subset(value, bitrange)),
             num_bits,
-            _phantom: PhantomData::default(),
+            _phantom: PhantomData,
         }
     }
 }
@@ -114,7 +114,7 @@ impl<F: Field> RangeConstrained<F, AssignedCell<F, F>> {
         Self {
             inner: cell,
             num_bits,
-            _phantom: PhantomData::default(),
+            _phantom: PhantomData,
         }
     }
 
@@ -123,7 +123,7 @@ impl<F: Field> RangeConstrained<F, AssignedCell<F, F>> {
         RangeConstrained {
             inner: self.inner.value().copied(),
             num_bits: self.num_bits,
-            _phantom: PhantomData::default(),
+            _phantom: PhantomData,
         }
     }
 }
@@ -339,6 +339,7 @@ mod tests {
 
     #[allow(clippy::assign_op_pattern)]
     #[allow(clippy::ptr_offset_with_cast)]
+    #[allow(clippy::single_range_in_vec_init)]
     #[test]
     fn test_bitrange_subset() {
         let rng = OsRng;
@@ -405,7 +406,6 @@ mod tests {
             }
             assert_eq!(field_elem, sum);
         };
-
         decompose(pallas::Base::random(rng), &[0..255]);
         decompose(pallas::Base::random(rng), &[0..1, 1..255]);
         decompose(pallas::Base::random(rng), &[0..254, 254..255]);

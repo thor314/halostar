@@ -221,7 +221,7 @@ impl<G: PrimeGroup, ConcreteCircuit: Circuit<G::Scalar>> CircuitCost<G, Concrete
             lookups: cs.lookups.len(),
             permutation_cols,
             point_sets: point_sets.len(),
-            _marker: PhantomData::default(),
+            _marker: PhantomData,
         }
     }
 
@@ -252,7 +252,7 @@ impl<G: PrimeGroup, ConcreteCircuit: Circuit<G::Scalar>> CircuitCost<G, Concrete
             // - 2*chunks + (chunks - 1) evals per instance
             equality: ProofContribution::new(chunks, 3 * chunks - 1),
 
-            _marker: PhantomData::default(),
+            _marker: PhantomData,
         }
     }
 
@@ -295,7 +295,7 @@ impl<G: PrimeGroup, ConcreteCircuit: Circuit<G::Scalar>> CircuitCost<G, Concrete
             // - xi
             polycomm: ProofContribution::new(1 + 2 * self.k, 2),
 
-            _marker: PhantomData::default(),
+            _marker: PhantomData,
         }
     }
 }

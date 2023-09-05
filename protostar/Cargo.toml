@@ -1,0 +1,10 @@
+[package]
+authors    =["Thor Kamphefner <thorck@pm.me>"]
+description="""protostar implementation integrated with halo2"""
+edition    ="2021"
+license    ="Apache2.0 OR MIT"
+name       ="protostar"
+repository ="https://github.com/thor314/protostar"
+version    ="0.1.0"
+
+[dependencies]

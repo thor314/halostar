@@ -1,4 +1,7 @@
-# halo2 [![Crates.io](https://img.shields.io/crates/v/halo2.svg)](https://crates.io/crates/halo2) #
+# (new) an implementatation of halo 2 with circuit folding via protostar
+See Protostar sub-crate.
+
+# (old) halo2 [![Crates.io](https://img.shields.io/crates/v/halo2.svg)](https://crates.io/crates/halo2) #
 
 ## [Documentation](https://docs.rs/halo2)
 

@@ -1,7 +1,11 @@
 //! The Accumulator Proving Key is the algebraic representation of the circuit.
 use std::ops::Range;
 
-use halo2_proofs::{
+use self::{
+  assembly::Assembly,
+  proving_key_utils::{FoldingConstraint, LinearConstraint, SimpleSelector},
+};
+use crate::{
   arithmetic::Field,
   halo2curves::{group::Curve, CurveAffine},
   plonk::{
@@ -10,9 +14,6 @@ use halo2_proofs::{
   },
   poly::commitment::Params,
 };
-
-use self::proving_key_utils::{FoldingConstraint, LinearConstraint, SimpleSelector};
-use crate::keygen::assembly::Assembly;
 
 /// All fixed data for a circuit; the algebraic representation of a circuit. Generates an
 /// Accumulator.
@@ -147,7 +148,7 @@ fn log2_ceil(num_rows: usize) -> usize { todo!() }
 
 // TODO(TK): move to own file, rename
 mod proving_key_utils {
-  use halo2_proofs::{
+  use crate::{
     halo2curves::CurveAffine,
     plonk::{ConstraintSystem, Expression, Selector},
   };
@@ -198,7 +199,7 @@ mod proving_key_utils {
 mod assembly {
   use std::ops::Range;
 
-  use halo2_proofs::{
+  use crate::{
     arithmetic::Field,
     circuit::{layouter::SyncDeps, Value},
     plonk::{

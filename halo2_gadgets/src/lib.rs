@@ -22,7 +22,6 @@
 #![deny(missing_debug_implementations)]
 #![deny(missing_docs)]
 #![deny(unsafe_code)]
-
 #![allow(unknown_lints)] // tmp(tk), revert if pulling upstream
 
 pub mod ecc;

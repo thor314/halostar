@@ -9,13 +9,13 @@
 #![allow(clippy::unknown_clippy_lints)]
 // The actual lints we want to disable.
 #![allow(
-    clippy::op_ref,
-    clippy::assign_op_pattern,
-    clippy::too_many_arguments,
-    clippy::suspicious_arithmetic_impl,
-    clippy::many_single_char_names,
-    clippy::same_item_push,
-    clippy::upper_case_acronyms
+  clippy::op_ref,
+  clippy::assign_op_pattern,
+  clippy::too_many_arguments,
+  clippy::suspicious_arithmetic_impl,
+  clippy::many_single_char_names,
+  clippy::same_item_push,
+  clippy::upper_case_acronyms
 )]
 #![deny(broken_intra_doc_links)]
 #![deny(missing_debug_implementations)]
@@ -36,3 +36,5 @@ pub mod transcript;
 pub mod dev;
 mod helpers;
 pub use helpers::SerdeFormat;
+
+pub mod protostar;

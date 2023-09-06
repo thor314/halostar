@@ -12,7 +12,7 @@ use crate::{
 };
 use ff::PrimeField;
 
-pub(crate) mod keygen;
+pub mod keygen;
 pub(crate) mod prover;
 pub(crate) mod verifier;
 

@@ -8,3 +8,10 @@ repository ="https://github.com/thor314/protostar"
 version    ="0.1.0"
 
 [dependencies]
+# ff = "0.13"
+# group = "0.13"
+# halo2curves = { version = "0.1.0" }
+# rand_core = { version = "0.6", default-features = false }
+halo2_proofs={ path="../halo2_proofs" }
+itertools   ={ version="0.11.0" }
+# rayon = "1.5.1"

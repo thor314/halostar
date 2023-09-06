@@ -1,3 +1,4 @@
+//! TODO(TK): change visibility; made public to satisfy Keygen Assembly module
 use std::collections::{BTreeMap, BTreeSet, HashMap, HashSet};
 
 use ff::{Field, PrimeField};
@@ -33,7 +34,8 @@ pub struct Assembly {
 
 #[cfg(not(feature = "thread-safe-region"))]
 impl Assembly {
-    pub(crate) fn new(n: usize, p: &Argument) -> Self {
+    /// TODO(TK)
+    pub fn new(n: usize, p: &Argument) -> Self {
         // Initialize the copy vector to keep track of copy constraints in all
         // the permutation arguments.
         let mut columns = vec![];
@@ -53,7 +55,8 @@ impl Assembly {
         }
     }
 
-    pub(crate) fn copy(
+    /// TODO(TK): change visibility or rewrite copy internally
+    pub fn copy(
         &mut self,
         left_column: Column<Any>,
         left_row: usize,
@@ -161,7 +164,8 @@ pub struct Assembly {
 
 #[cfg(feature = "thread-safe-region")]
 impl Assembly {
-    pub(crate) fn new(n: usize, p: &Argument) -> Self {
+    /// TODO(TK): made pub
+    pub fn new(n: usize, p: &Argument) -> Self {
         Assembly {
             columns: p.columns.clone(),
             cycles: Vec::with_capacity(n),
@@ -172,7 +176,8 @@ impl Assembly {
         }
     }
 
-    pub(crate) fn copy(
+    /// TODO(TK): change visibility or rewrite copy internally
+    pub fn copy(
         &mut self,
         left_column: Column<Any>,
         left_row: usize,

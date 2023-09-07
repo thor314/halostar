@@ -6,4 +6,8 @@
 #![allow(missing_docs)]
 #![allow(unsafe_code)]
 
-pub mod keygen;
+pub mod accumulator;
+pub mod error_check;
+pub mod proving_key;
+
+// TODO(TK): implement the API here or in api.rs

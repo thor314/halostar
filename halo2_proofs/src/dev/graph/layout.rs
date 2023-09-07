@@ -340,12 +340,8 @@ impl Layout {
       regions: vec![],
       current_region: None,
       total_rows: 0,
-      /// Any cells assigned outside of a region. We store this as a `Vec` so that if any
-      /// cells are double-assigned, they will be visibly darker.
       loose_cells: vec![],
-      /// Pairs of cells between which we have equality constraints.
       equality: vec![],
-      /// Selector assignments used for optimization pass
       selectors: vec![vec![false; n]; num_selectors],
     }
   }

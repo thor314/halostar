@@ -589,7 +589,6 @@ fn plonk_api() {
         >(verifier_params, pk.get_vk(), &proof[..]);
     }
 
-    #[allow(clippy::needless_raw_string_hashes)]
     fn test_plonk_api_ipa() {
         use halo2_proofs::poly::ipa::commitment::{IPACommitmentScheme, ParamsIPA};
         use halo2_proofs::poly::ipa::multiopen::{ProverIPA, VerifierIPA};
